@@ -1,11 +1,12 @@
-
-krumpli <- pi #2.
-print(krumpli) #3.
-
-b <- 342*krumpli #4.
+#2.
+krumpli <- pi 
+#3.
+print(krumpli)
+#4.
+b <- 342*krumpli
 print(b)
-
-sorozat <- 44:60 #5.
+ #5.
+sorozat <- 44:60
 print(sorozat)
 
 #6.
@@ -15,13 +16,13 @@ sorozat %% 2 == 0
 print(b+sorozat)
 
 #8
-name <- c("Gizi", "Bela", "Jenõ")
+name <- c("Gizi", "Bela", "JenÃµ")
 factor_name <- factor(name)
 str(factor_name)
 View(factor_name)
 
 #9.
-name <- c("Gizi", "Jenõ", "Bela")
+name <- c("Gizi", "JenÃµ", "Bela")
 factor_name <- factor(name)
 str(factor_name)
 factor_name
@@ -45,8 +46,8 @@ tomb
 
 #13
 getwd()
-setwd("D:/Lenovo2019/Szociológia Ma/2. Félév/Statisztikai Programozás/Hf")
-library(foreign) #külön packet
+setwd("D:/Lenovo2019/SzociolÃ³gia Ma/2. FÃ©lÃ©v/Statisztikai ProgramozÃ¡s/Hf")
+library(foreign) #kÃ¼lÃ¶n packet
 Dataset <-  read.spss("ESS7.sav", 
                       rownames=FALSE, 
                       stringsAsFactors=TRUE, 
