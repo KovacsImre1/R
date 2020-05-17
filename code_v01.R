@@ -13,6 +13,10 @@ setwd("C:/Users/Imii/OneDrive - Károli Gáspár Református Egyetem/2. félév/
 data <- read.xlsx("data3.xlsx", sheet = 1)
 data
 
+#vagy
+data <- read.xlsx("https://github.com/kovacsvlagy/R/blob/master/data3.xlsx", sheet = 1)
+data
+
 for( i in 1:length(data[,1])){
   data[i, 1] <- gsub(";.*", "", data[i, 1])
 }
@@ -62,7 +66,6 @@ abra1 <- ggplot(data=top11, aes(x=Country, y=atlag, fill=Country)) +
     geom_text(aes(label = sprintf("%.02f",atlag)),position = position_stack(vjust = 0.5))+
        ggtitle("Top 11 alcohol consuption in average 2000-2015")+
   labs(y="Liters of pure alcohol", x="Country")+
-  theme(legend.position="bottom")+
   theme(legend.direction = "horizontal", legend.position = "bottom",
         axis.text.x = element_text(angle = 75, vjust = 0.5, face = "bold", color = "black"),
         axis.text.y = element_text(color = "black", face = "bold"),
@@ -336,5 +339,8 @@ abra5
 abra6
 abra7
 
-plotos<-grid.arrange(abra1,abra5,abra6,abra4,abra3,abra2,ncol=3,nrow=2)
+plotos<-grid.arrange(abra1,abra5,abra6,abra4,abra3,abra2,ncol=3,nrow=2, top= textGrob("Alcohol Consumption Trends"))
 ggsave("plotos.png")
+
+w1 <- grid.arrange(a3, a2, d, f, ncol=2, top= textGrob("Analyze Global Suicide Trends",gp=gpar(fontsize=20,font=3)),
+                   bottom="Data Source:\nhttps://www.kaggle.com/russellyates88/suicide-rates-overview-1985-to-2016/ ")
